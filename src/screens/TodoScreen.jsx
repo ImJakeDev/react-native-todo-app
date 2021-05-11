@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function Todo({ navigation }) {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Details Screen 🦙</Text>
       <Button
         title="Go Home homie"
