@@ -5,10 +5,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>🦧 This is Jake's React Native Todo app!</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("Details")}
-      />
+      <Button title="Go to Todo" onPress={() => navigation.navigate("Todo")} />
     </View>
   );
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-export default function DetailsScreen({ navigation }) {
+export default function Todo({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Details Screen 🦙</Text>
