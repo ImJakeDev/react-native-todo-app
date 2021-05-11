@@ -13,13 +13,26 @@ function HomeScreen() {
   );
 }
 
+function DetailsScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Details Screen 🦙</Text>
+    </View>
+  );
+}
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Overview" }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
