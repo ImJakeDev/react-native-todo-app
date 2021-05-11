@@ -1,0 +1,12 @@
+{
+  "name": "jakes-todo-app",
+  "displayName": "jakes-todo-app",
+  "expo": {
+    "name": "jakes-todo-app",
+    "slug": "jakes-todo-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
