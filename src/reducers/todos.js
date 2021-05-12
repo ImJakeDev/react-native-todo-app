@@ -16,7 +16,7 @@ export const initialState = {
   items: [
     createItem("Click to remove"),
     createItem("Learn React Native"),
-    createItem("Build a Todo ap"),
+    createItem("Build a Todo app"),
     createItem("Refactor code"),
     createItem("Learn learn learn..."),
   ],
