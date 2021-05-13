@@ -4,10 +4,15 @@ import initialState from "../api/example-data.json";
 
 const TodoContext = React.createContext();
 
+const randomId = () => Math.random().toString();
+
+const createItem = (title) => ({ id: randomId(), title });
+
 function todoReducer(state, action) {
   switch (action.type) {
     case "add":
-      return { ...state, items: [...state.items, action.payload] };
+      // return { ...state, createItem(action.payload) };
+      return [...state, createItem(action.payload)]
     case "remove":
       return state.filter((item) => item.id !== action.payload)
     default: {
