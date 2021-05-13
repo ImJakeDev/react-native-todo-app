@@ -11,7 +11,6 @@ const createItem = (title) => ({ id: randomId(), title });
 function todoReducer(state, action) {
   switch (action.type) {
     case "add":
-      // return { ...state, createItem(action.payload) };
       return [...state, createItem(action.payload)]
     case "remove":
       return state.filter((item) => item.id !== action.payload)
