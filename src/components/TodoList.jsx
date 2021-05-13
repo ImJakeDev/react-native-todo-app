@@ -5,7 +5,7 @@ export default function List({ items, onPressItem }) {
   return (
     <FlatList
       data={items}
-      keyExtractor={(item) => item.id}
+      keyExtractor={(item) => item.id.toString()}
       renderItem={({ item, index }) => (
         <TouchableOpacity
           style={[styles.item, { backgroundColor: itemColor(index) }]}
