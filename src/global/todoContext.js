@@ -1,10 +1,10 @@
 import * as React from "react";
-
+import uuid from "react-native-uuid";
 import initialState from "../api/example-data.json";
 
 const TodoContext = React.createContext();
 
-const randomId = () => Math.random().toString();
+const randomId = () => uuid.v4().toString();
 
 const createItem = (title) => ({ id: randomId(), title });
 
