@@ -6,6 +6,10 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Text>🦧 This is Jake's React Native Todo app!</Text>
       <Button title="Go to Todo" onPress={() => navigation.navigate("Todo")} />
+      <Button
+        title="Go to Todo List with Context"
+        onPress={() => navigation.navigate("TodoContext")}
+      />
     </View>
   );
 }

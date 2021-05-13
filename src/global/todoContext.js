@@ -5,15 +5,11 @@ import initialState from "../api/example-data.json";
 const TodoContext = React.createContext();
 
 function todoReducer(state, action) {
-  console.debug(state, action);
   switch (action.type) {
-    case types.ADD:
+    case "add":
       return { ...state, items: [...state.items, action.payload] };
-    case types.REMOVE:
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== action.payload),
-      };
+    case "remove":
+      return state.filter((item) => item.id !== action.payload)
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }

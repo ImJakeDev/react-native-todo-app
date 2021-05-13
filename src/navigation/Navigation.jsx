@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from '../screens/HomeScreen'
 import TodoScreen from "../screens/TodoScreen";
+import TodoContextScreen from "../screens/TodoContextScreen";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function Navigation() {
           options={{ title: "Homie 🗿" }}
         />
         <Stack.Screen name="Todo" component={TodoScreen} />
+        <Stack.Screen name="TodoContext" component={TodoContextScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
