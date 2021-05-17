@@ -12,16 +12,20 @@ const image = {
 export default function HomeScreen({ navigation }) {
   return (
     <ImageBackground source={image} style={styles.image}>
-      <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
-      <View style={styles.container}>
-        <Button
-          title="Go to Todo"
-          onPress={() => navigation.navigate("Todo")}
-        />
-        <Button
-          title="Go to Todo List with Context"
-          onPress={() => navigation.navigate("TodoContext")}
-        />
+      <View style={{ flex: 1, padding: 20 }}>
+        <View style={{ flex: 1 }}>
+          <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
+        </View>
+        <View style={styles.container}>
+          <Button
+            title="Go to Todo"
+            onPress={() => navigation.navigate("Todo")}
+          />
+          <Button
+            title="Go to Todo List with Context"
+            onPress={() => navigation.navigate("TodoContext")}
+          />
+        </View>
       </View>
     </ImageBackground>
   );
@@ -29,11 +33,9 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginTop: 150,
-    marginBottom: 80,
+    flex: 6,
+    borderColor: "rgba(233, 236, 241, 0.5)",
+    borderWidth: 3,
   },
   image: {
     flex: 1,
