@@ -15,7 +15,7 @@ export default function Navigation() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Homie 🗿" }}
+          options={{ title: "Home 🗿" }}
         />
         <Stack.Screen name="Todo" component={TodoScreen} />
         <Stack.Screen name="TodoContext" component={TodoContextScreen} />
