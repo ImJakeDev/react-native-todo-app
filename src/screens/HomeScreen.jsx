@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ImageBackground, StyleSheet, Text, View, Button } from "react-native";
 
+import HeroTitle from "../components/HeroTitle";
+
 const image = {
   // uri: "https://images.unsplash.com/photo-1621146027714-e8921770f8d0",
   // uri: "https://images.unsplash.com/photo-1613058982958-49ce4bd14d1e",
@@ -10,8 +12,8 @@ const image = {
 export default function HomeScreen({ navigation }) {
   return (
     <ImageBackground source={image} style={styles.image}>
+      <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
       <View style={styles.container}>
-        <Text>🦧 This is Jake's React Native Todo app!</Text>
         <Button
           title="Go to Todo"
           onPress={() => navigation.navigate("Todo")}
@@ -28,9 +30,10 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    marginTop: 150,
+    marginBottom: 80,
   },
   image: {
     flex: 1,
