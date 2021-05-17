@@ -1,6 +1,7 @@
 import * as React from "react";
-import { ImageBackground, StyleSheet, Text, View, Button } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
 
+import NewButton from '../components/Button'
 import HeroTitle from "../components/HeroTitle";
 
 const image = {
@@ -17,11 +18,11 @@ export default function HomeScreen({ navigation }) {
           <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
         </View>
         <View style={styles.container}>
-          <Button
+          <NewButton
             title="Go to Todo"
             onPress={() => navigation.navigate("Todo")}
           />
-          <Button
+          <NewButton
             title="Go to Todo List with Context"
             onPress={() => navigation.navigate("TodoContext")}
           />
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 6,
     borderColor: "rgba(233, 236, 241, 0.5)",
     borderWidth: 3,
+    padding: 20
   },
   image: {
     flex: 1,
