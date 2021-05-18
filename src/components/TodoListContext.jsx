@@ -7,6 +7,10 @@ import { useTodo } from "../global/todoContext";
 export default function List() {
   const { dispatch, state } = useTodo();
 
+  const handleEdit = () => {
+    console.log("edit me please");
+  };
+
   return (
     <FlatList
       data={state}
@@ -14,12 +18,22 @@ export default function List() {
       renderItem={({ item, index }) => (
         <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
           <Text style={styles.title}>{item.title}</Text>
-          <Icon
-            name="trash-alt"
-            type="font-awesome-5"
-            color="#f50"
-            onPress={() => dispatch({ type: "REMOVE_TODO", payload: item.id })}
-          />
+          <View style={styles.actions}>
+            <Icon
+              name="edit"
+              type="font-awesome-5"
+              color="gray"
+              onPress={handleEdit}
+            />
+            <Icon
+              name="trash-alt"
+              type="font-awesome-5"
+              color="#f50"
+              onPress={() =>
+                dispatch({ type: "REMOVE_TODO", payload: item.id })
+              }
+            />
+          </View>
         </View>
       )}
     />
@@ -42,5 +56,10 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "bold",
     fontSize: 15,
+  },
+  actions: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
