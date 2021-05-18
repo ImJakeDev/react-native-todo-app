@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
 
@@ -8,9 +8,10 @@ import ToggleTodoTitle from "./ToggleTodoTitle";
 
 export default function List() {
   const { dispatch, state } = useTodo();
+  const [isEditable, setIsEditable] = useState(false);
 
   const handleEdit = () => {
-    console.log("edit me please");
+    setIsEditable(true);
   };
 
   return (
@@ -21,18 +22,19 @@ export default function List() {
         <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
           <ToggleTodoTitle
             title={item.title}
-            isEditable={true}
+            isEditable={isEditable}
             id={item.id}
-            onSubmitEditing={(editedTodo) =>
-              dispatch({ type: "EDIT_TODO", payload: editedTodo })
-            }
+            onSubmitEditing={(editedTodo) => {
+              dispatch({ type: "EDIT_TODO", payload: editedTodo });
+              setIsEditable(false);
+            }}
           />
           <View style={styles.actions}>
             <Icon
               name="edit"
               type="font-awesome-5"
               color="gray"
-              onPress={handleEdit}
+              onPress={() => handleEdit()}
             />
             <Icon
               name="trash-alt"
