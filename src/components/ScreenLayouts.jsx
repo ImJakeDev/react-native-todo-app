@@ -19,7 +19,6 @@ const whichImage = (image) => {
       return {
         uri: "https://images.unsplash.com/photo-1550114535-9661885b0cf9",
       };
-      break;
   }
 }
 
