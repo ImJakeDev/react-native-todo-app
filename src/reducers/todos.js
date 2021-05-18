@@ -23,7 +23,6 @@ export const initialState = {
 };
 
 export function reducer(state, action) {
-  console.debug(state, action);
   switch (action.type) {
     case types.ADD:
       return { ...state, items: [...state.items, action.payload] };
