@@ -23,15 +23,17 @@ export default function List() {
 }
 
 function itemColor(index) {
-  return `rgba(59, 108, 212, ${Math.max(1 - index / 10, 0.4)})`;
+  return `rgba(233, 236, 241, ${Math.max(1 - index / 10, 0.4)})`;
 }
 
 const styles = StyleSheet.create({
   item: {
-    marginBottom: 1,
-    padding: 15,
+    marginBottom: 5,
+    padding: 20,
   },
   title: {
-    color: "white",
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });

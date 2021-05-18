@@ -12,6 +12,7 @@ export default function TodoInputContext({ placeholder }) {
       style={styles.input}
       value={text}
       placeholder={placeholder}
+      placeholderTextColor="rgba(233, 236, 241, 1)"
       onChangeText={(value) => setText(value)}
       onSubmitEditing={() => {
         if (!text) return; // Don't submit if empty
@@ -24,7 +25,14 @@ export default function TodoInputContext({ placeholder }) {
 
 const styles = StyleSheet.create({
   input: {
+    borderColor: "rgba(233, 236, 241, 0.5)",
+    borderWidth: 3,
     padding: 15,
     height: 50,
+    marginTop: 10,
+    marginBottom: 10,
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });
