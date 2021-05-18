@@ -1,5 +1,11 @@
 import React from "react";
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Icon } from "react-native-elements";
 
 import { useTodo } from "../global/todoContext";
@@ -12,20 +18,15 @@ export default function List() {
       data={state}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item, index }) => (
-        <TouchableOpacity
-          style={[styles.item, { backgroundColor: itemColor(index) }]}
-          onPress={() => dispatch({ type: "remove", payload: item.id })}
-        >
-          <View></View>
+        <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
           <Text style={styles.title}>{item.title}</Text>
           <Icon
-            raised
-            name="heartbeat"
-            type="font-awesome"
+            name="trash-alt"
+            type="font-awesome-5"
             color="#f50"
-            onPress={() => console.log("hello")}
+            onPress={() => dispatch({ type: "remove", payload: item.id })}
           />
-        </TouchableOpacity>
+        </View>
       )}
     />
   );
@@ -39,6 +40,9 @@ const styles = StyleSheet.create({
   item: {
     marginBottom: 5,
     padding: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   title: {
     color: "black",
