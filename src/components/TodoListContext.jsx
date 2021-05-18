@@ -1,5 +1,6 @@
-import React, { useReducer } from "react";
-import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from "react";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Icon } from "react-native-elements";
 
 import { useTodo } from "../global/todoContext";
 
@@ -15,7 +16,15 @@ export default function List() {
           style={[styles.item, { backgroundColor: itemColor(index) }]}
           onPress={() => dispatch({ type: "remove", payload: item.id })}
         >
+          <View></View>
           <Text style={styles.title}>{item.title}</Text>
+          <Icon
+            raised
+            name="heartbeat"
+            type="font-awesome"
+            color="#f50"
+            onPress={() => console.log("hello")}
+          />
         </TouchableOpacity>
       )}
     />
