@@ -15,12 +15,10 @@ function todoReducer(state, action) {
     case "REMOVE_TODO":
       return state.filter((item) => item.id !== action.payload);
     case "EDIT_TODO":
-      return state.map((item, index) => {
+      return state.map((item) => {
         if (item.id !== action.payload.id) {
-          // This isn't the item we care about - keep it as-is
           return item;
         }
-        // Otherwise, this is the one we want - return an updated value
         return {
           ...item,
           ...action.payload,

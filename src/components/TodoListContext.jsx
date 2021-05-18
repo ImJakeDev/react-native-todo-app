@@ -4,6 +4,8 @@ import { Icon } from "react-native-elements";
 
 import { useTodo } from "../global/todoContext";
 
+import ToggleTodoTitle from "./ToggleTodoTitle";
+
 export default function List() {
   const { dispatch, state } = useTodo();
 
@@ -17,7 +19,14 @@ export default function List() {
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item, index }) => (
         <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
-          <Text style={styles.title}>{item.title}</Text>
+          <ToggleTodoTitle
+            title={item.title}
+            isEditable={true}
+            id={item.id}
+            onSubmitEditing={(editedTodo) =>
+              dispatch({ type: "EDIT_TODO", payload: editedTodo })
+            }
+          />
           <View style={styles.actions}>
             <Icon
               name="edit"
