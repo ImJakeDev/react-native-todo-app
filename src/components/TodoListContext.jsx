@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
 
 import { useTodo } from "../global/todoContext";
@@ -42,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   title: {
     color: "black",
