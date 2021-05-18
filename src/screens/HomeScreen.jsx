@@ -1,19 +1,13 @@
 import * as React from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import NewButton from '../components/Button'
 import HeroTitle from "../components/HeroTitle";
-
-const image = {
-  // uri: "https://images.unsplash.com/photo-1621146027714-e8921770f8d0",
-  // uri: "https://images.unsplash.com/photo-1613058982958-49ce4bd14d1e",
-  uri: "https://images.unsplash.com/photo-1550114535-9661885b0cf9",
-};
+import ScreenLayouts from "../components/ScreenLayouts";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ImageBackground source={image} style={styles.image}>
-      <View style={{ flex: 1, padding: 20 }}>
+    <ScreenLayouts image="tree">
         <View style={{ flex: 1 }}>
           <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
         </View>
@@ -27,8 +21,7 @@ export default function HomeScreen({ navigation }) {
             onPress={() => navigation.navigate("TodoContext")}
           />
         </View>
-      </View>
-    </ImageBackground>
+    </ScreenLayouts>
   );
 }
 
