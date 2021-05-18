@@ -16,7 +16,7 @@ export default function TodoInputContext({ placeholder }) {
       onChangeText={(value) => setText(value)}
       onSubmitEditing={() => {
         if (!text) return; // Don't submit if empty
-        dispatch({ type: "add", payload: text });
+        dispatch({ type: "ADD_TODO", payload: text });
         setText("");
       }}
     />

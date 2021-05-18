@@ -10,10 +10,12 @@ const createItem = (title) => ({ id: randomId(), title });
 
 function todoReducer(state, action) {
   switch (action.type) {
-    case "add":
-      return [...state, createItem(action.payload)]
-    case "remove":
-      return state.filter((item) => item.id !== action.payload)
+    case "ADD_TODO":
+      return [...state, createItem(action.payload)];
+    case "REMOVE_TODO":
+      return state.filter((item) => item.id !== action.payload);
+    // case "EDIT_TODO":
+    //   return state.filter((item) => item.id !== action.payload);
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }

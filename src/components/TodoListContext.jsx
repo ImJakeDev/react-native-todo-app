@@ -18,7 +18,7 @@ export default function List() {
             name="trash-alt"
             type="font-awesome-5"
             color="#f50"
-            onPress={() => dispatch({ type: "remove", payload: item.id })}
+            onPress={() => dispatch({ type: "REMOVE_TODO", payload: item.id })}
           />
         </View>
       )}
