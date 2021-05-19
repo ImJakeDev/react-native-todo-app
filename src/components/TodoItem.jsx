@@ -20,6 +20,7 @@ export default function TodoItem({ item, index, dispatch, itemColor }) {
       />
       <TodoActions
         dispatch={dispatch}
+        isEditable={isEditable}
         item={item}
         setIsEditable={setIsEditable}
       />
