@@ -1,36 +1,22 @@
-import React, { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
-
+import React from "react";
+import { FlatList, StyleSheet } from "react-native";
 import { useTodo } from "../global/todoContext";
-
-import ToggleTodoTitle from "./ToggleTodoTitle";
-import TodoActions from "./TodoActions";
+import TodoItem from "./TodoItem";
 
 export default function List() {
   const { dispatch, state } = useTodo();
-  const [isEditable, setIsEditable] = useState(false);
 
   return (
     <FlatList
       data={state}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item, index }) => (
-        <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
-          <ToggleTodoTitle
-            id={item.id}
-            isEditable={isEditable}
-            title={item.title}
-            onSubmitEditing={(editedTodo) => {
-              dispatch({ type: "EDIT_TODO", payload: editedTodo });
-              setIsEditable(false);
-            }}
-          />
-          <TodoActions
-            dispatch={dispatch}
-            item={item}
-            setIsEditable={setIsEditable}
-          />
-        </View>
+        <TodoItem
+          item={item}
+          index={index}
+          dispatch={dispatch}
+          itemColor={itemColor}
+        />
       )}
     />
   );
