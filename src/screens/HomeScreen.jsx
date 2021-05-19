@@ -12,10 +12,10 @@ export default function HomeScreen({ navigation }) {
           <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
         </View>
         <View style={styles.container}>
-          <NewButton
+          {/* <NewButton
             title="Go to Todo"
             onPress={() => navigation.navigate("Todo")}
-          />
+          /> */}
           <NewButton
             title="Go to Todo List with Context"
             onPress={() => navigation.navigate("TodoContext")}
