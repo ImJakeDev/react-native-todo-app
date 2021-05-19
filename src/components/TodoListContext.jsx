@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { Icon } from "react-native-elements";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import { useTodo } from "../global/todoContext";
 
 import ToggleTodoTitle from "./ToggleTodoTitle";
+import TodoActions from "./TodoActions";
 
 export default function List() {
   const { dispatch, state } = useTodo();
   const [isEditable, setIsEditable] = useState(false);
-
-  const handleEdit = () => {
-    setIsEditable(true);
-  };
 
   return (
     <FlatList
@@ -21,30 +17,19 @@ export default function List() {
       renderItem={({ item, index }) => (
         <View style={[styles.item, { backgroundColor: itemColor(index) }]}>
           <ToggleTodoTitle
-            title={item.title}
-            isEditable={isEditable}
             id={item.id}
+            isEditable={isEditable}
+            title={item.title}
             onSubmitEditing={(editedTodo) => {
               dispatch({ type: "EDIT_TODO", payload: editedTodo });
               setIsEditable(false);
             }}
           />
-          <View style={styles.actions}>
-            <Icon
-              name="edit"
-              type="font-awesome-5"
-              color="gray"
-              onPress={() => handleEdit()}
-            />
-            <Icon
-              name="trash-alt"
-              type="font-awesome-5"
-              color="#f50"
-              onPress={() =>
-                dispatch({ type: "REMOVE_TODO", payload: item.id })
-              }
-            />
-          </View>
+          <TodoActions
+            dispatch={dispatch}
+            item={item}
+            setIsEditable={setIsEditable}
+          />
         </View>
       )}
     />
@@ -57,20 +42,15 @@ function itemColor(index) {
 
 const styles = StyleSheet.create({
   item: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 5,
     padding: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
   },
   title: {
     color: "black",
-    fontWeight: "bold",
     fontSize: 15,
-  },
-  actions: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    fontWeight: "bold",
   },
 });
