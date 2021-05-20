@@ -12,7 +12,7 @@ export default function TodoActions({ dispatch, isEditable, item, setIsEditable 
       {!isEditable ? (
         <View style={styles.actions}>
           <Icon
-            color="gray"
+            color="black"
             name="edit"
             type="font-awesome-5"
             style={styles.icon}
