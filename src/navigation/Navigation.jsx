@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from '../screens/HomeScreen'
-import TodoScreen from "../screens/TodoScreen";
+import PokemonScreen from "../screens/PokemonScreen";
 import TodoContextScreen from "../screens/TodoContextScreen";
 
 const Stack = createStackNavigator();
