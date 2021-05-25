@@ -8,19 +8,19 @@ import ScreenLayouts from "../components/ScreenLayouts";
 export default function HomeScreen({ navigation }) {
   return (
     <ScreenLayouts image="tree">
-        <View style={{ flex: 1 }}>
-          <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
-        </View>
-        <View style={styles.container}>
-          {/* <NewButton
-            title="Go to Todo"
-            onPress={() => navigation.navigate("Todo")}
-          /> */}
-          <NewButton
-            title="Go to Todo List with Context"
-            onPress={() => navigation.navigate("TodoContext")}
-          />
-        </View>
+      <View style={{ flex: 1 }}>
+        <HeroTitle>🦧 This is Jake's React Native Todo app!</HeroTitle>
+      </View>
+      <View style={styles.container}>
+        <NewButton
+          title="Todo App"
+          onPress={() => navigation.navigate("TodoContext")}
+        />
+        <NewButton
+          title="Pokemon App"
+          onPress={() => navigation.navigate("Pokemon")}
+        />
+      </View>
     </ScreenLayouts>
   );
 }

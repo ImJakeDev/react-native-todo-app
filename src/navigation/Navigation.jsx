@@ -17,8 +17,16 @@ export default function Navigation() {
           component={HomeScreen}
           options={{ title: "Home 🗿" }}
         />
-        <Stack.Screen name="Todo" component={TodoScreen} />
-        <Stack.Screen name="TodoContext" component={TodoContextScreen} />
+        <Stack.Screen
+          name="TodoContext"
+          component={TodoContextScreen}
+          options={{ title: "Todo App" }}
+        />
+        <Stack.Screen
+          name="Pokemon"
+          component={PokemonScreen}
+          options={{ title: "Pokemon App" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
