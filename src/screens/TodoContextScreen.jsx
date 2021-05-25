@@ -1,7 +1,7 @@
 import React from "react";
 
-import TodoListContext from "../components/TodoListContext";
-import TodoInputContext from "../components/TodoInputContext";
+import TodoListContext from "../components/todo-context/TodoListContext";
+import TodoInputContext from "../components/todo-context/TodoInputContext";
 import HeroTitle from "../components/HeroTitle";
 import ScreenLayouts from "../components/ScreenLayouts";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { KeyboardAwareFlatList } from "react-native-keyboard-aware-scroll-view";
-import { useTodo } from "../global/todoContext";
+import { useTodo } from "../../global/todoContext";
 import TodoItem from "./TodoItem";
 
 export default function List() {

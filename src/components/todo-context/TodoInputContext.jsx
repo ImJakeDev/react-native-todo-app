@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput } from "react-native";
 
-import { useTodo } from "../global/todoContext";
+import { useTodo } from "../../global/todoContext";
 
 export default function TodoInputContext({ placeholder }) {
   const [text, setText] = useState("");
