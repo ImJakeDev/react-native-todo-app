@@ -11,6 +11,7 @@ export default function List() {
     <FlatList
       data={data}
       keyExtractor={(item) => item.id.toString()}
+      style={styles.container}
       renderItem={({ item }) => (
         <CardItem card={item}/>
       )}
@@ -19,3 +20,10 @@ export default function List() {
     <ActivityIndicator size="large" />
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignContent: "center",
+  },
+});
