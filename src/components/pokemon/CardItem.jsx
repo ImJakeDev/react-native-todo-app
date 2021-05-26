@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,18 +9,25 @@ import {
 } from "react-native";
 
 export default function CardItem({card}) {
+  const [isLoading, setIsLoading] = useState(true)
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{JSON.stringify(card.name, null, 4)}</Text>
-      <View
-        style={styles.wrapper}
-      >
+      <View style={{ flexDirection: "row" }}>
+        <Text style={styles.text}>{JSON.stringify(card.name)}</Text>
+        <Text style={styles.text}>
+          {isLoading ? "____isLoading = True" : "_____isLoading = False"}
+        </Text>
+      </View>
+      <View style={styles.wrapper}>
+        {isLoading && (
+          <ActivityIndicator style={styles.absoluteFill} size={"large"} />
+        )}
         <Image
           style={styles.image}
           source={{
             uri: card.images.large,
           }}
-          onLoad={() => <ActivityIndicator size="large" />}
+          onLoad={() => setIsLoading(false)}
         />
       </View>
     </View>
@@ -49,5 +56,12 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "stretch",
     borderRadius: Platform.OS === "ios" ? 17 : 10,
+  },
+  absoluteFill: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
   },
 });
