@@ -8,8 +8,8 @@ export default function TodoContext() {
 
   return (
     <ScreenLayouts image="jungle">
-      <HeroTitle>Pokemons</HeroTitle>
-      <CardList/>
+      <HeroTitle>Pokémon</HeroTitle>
+      <CardList />
     </ScreenLayouts>
   );
 }
