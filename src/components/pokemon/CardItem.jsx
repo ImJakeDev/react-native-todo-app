@@ -25,7 +25,7 @@ export default function CardItem({card}) {
         <Image
           style={styles.image}
           source={{
-            uri: card.images.large,
+            uri: card.images.small,
           }}
           onLoad={() => setIsLoading(false)}
         />
